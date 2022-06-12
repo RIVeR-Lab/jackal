@@ -117,7 +117,7 @@
     <inertial>
       <!-- Center of mass -->
       <origin xyz="0.012  0.002 0.067" rpy="0 0 0"/>
-      <mass value="16.523"/>
+      <mass value="160.523"/> <!-- Default: 16.523 -->
       <!-- Moments of inertia: ( chassis without wheels ) -->
       <inertia
         ixx="0.3136" ixy="-0.0008" ixz="0.0164"
@@ -134,6 +134,12 @@
         </geometry>
         <material name="yellow" />
       </visual>
+      <collision>
+        <!--origin xyz="0 0 0" rpy="0 0 0"/-->
+        <geometry>
+          <mesh filename="package://jackal_description/meshes/jackal-fender.stl"/>
+        </geometry>
+      </collision>
     </link>
   </xacro:unless>
 
@@ -145,6 +151,12 @@
         </geometry>
         <material name="yellow" />
       </visual>
+      <collision>
+        <!--origin xyz="0 0 0" rpy="0 0 0"/-->
+        <geometry>
+          <mesh filename="package://jackal_description/meshes/accessory_fender.stl"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="front_fender_accessory_link"/>
@@ -169,6 +181,12 @@
         </geometry>
         <material name="yellow" />
       </visual>
+      <collision>
+        <!--origin xyz="0 0 0" rpy="0 0 0"/-->
+        <geometry>
+          <mesh filename="package://jackal_description/meshes/jackal-fender.stl"/>
+        </geometry>
+      </collision>
     </link>
   </xacro:unless>
 
@@ -180,6 +198,12 @@
         </geometry>
         <material name="yellow" />
       </visual>
+      <collision>
+        <!--origin xyz="0 0 0" rpy="0 0 0"/-->
+        <geometry>
+          <mesh filename="package://jackal_description/meshes/accessory_fender.stl"/>
+        </geometry>
+      </collision>
     </link>
 
     <link name="rear_fender_accessory_link"/>
@@ -221,6 +245,12 @@
       <origin xyz="0 0 0.008" />
       <material name="black" />
     </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.026" length="0.016" />
+      </geometry>
+      <origin xyz="0 0 0.008" />
+    </collision>
   </link>
   <joint name="navsat_joint" type="fixed">
     <parent link="chassis_link" />
